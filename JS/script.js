@@ -26,13 +26,71 @@ const anteprime = document.querySelector(".anteprime");
 
 for (let i = 0; i < items.length; i++){
     // console.log(items[i]);
-    anteprime.innerHTML +=  `<div class="box"><img src="${items[i]}" alt=""></div>`
+    anteprime.innerHTML +=  `
+    <div class="box opacity">
+        <img src="${items[i]}" alt="">
+    </div>`
 }
 
-const jumbo = document.querySelector(".container-jumbo");
+const containerJumbo = document.querySelector(".container-jumbo");
+
 
 for (let i = 0; i < items.length; i++){
     // console.log(items[i]);
-    jumbo.innerHTML +=  `<img src="${items[i]}" alt="">`
+    containerJumbo.innerHTML +=  `
+        <div class="box-jumbo">
+            <img src="${items[i]}" alt="">
+        </div>
+    `
 }
 
+const boxJumbo = document.getElementsByClassName("box-jumbo");
+console.log(boxJumbo);
+let activebox = 0;
+boxJumbo[activebox].classList.add("active");
+
+const su = document.querySelector(".top");
+const giu = document.querySelector(".bottom");
+
+
+
+su.addEventListener("click", function(){
+
+    if (activebox < items.length - 1){
+
+        boxJumbo[activebox].classList.remove("active");
+
+        activebox++;
+    
+        boxJumbo[activebox].classList.add("active");
+    }else{
+
+        boxJumbo[activebox].classList.remove("active");
+
+        activebox -= 4;
+
+        boxJumbo[activebox].classList.add("active");
+
+    }   
+})
+
+giu.addEventListener("click", function(){
+
+    if (activebox > 0){
+
+        boxJumbo[activebox].classList.remove("active");
+
+        activebox--;
+    
+        boxJumbo[activebox].classList.add("active");
+
+    }else{
+
+        boxJumbo[activebox].classList.remove("active");
+
+        activebox += 4;
+
+        boxJumbo[activebox].classList.add("active");
+
+    } 
+})

@@ -27,10 +27,6 @@ main{
     position: relative;
 }
 
-.container-jumbo{
-    height: 50vh;
-}
-
 .jumbo .descrizione{
     position: absolute;
     bottom: 10px;
@@ -74,14 +70,16 @@ main{
     border: 2px solid lightgray;
 }
 
-.active{
-    display: block;
-}
-
 .box-jumbo{
     display: none;
     height: 50vh;
 }
+
+.active{
+    display: block;
+}
+
+
 
 .top,
 .bottom{
@@ -94,8 +92,8 @@ main{
     text-align: center;
     background-color: lightgray;
     border-radius: 50%;
-    opacity: 0.8;
     border: none;
+    z-index: 2;
 }
 
 .top{
